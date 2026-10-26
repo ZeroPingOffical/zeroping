@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>ZeroPing – Minecraft Mods & Texture Packs</title>
+<meta name="description" content="Download Minecraft mods and texture packs. No account needed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&display=swap">
+<style>
+:root{--c:#00f0ff;--bg:#000;--p:#06090b;--line:#0b3a40;--t:#e6fcff;--m:#78a3a8;--g:0 0 18px rgba(0,240,255,.55)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t);font:400 16px/1.55 'Chakra Petch',system-ui,-apple-system,sans-serif;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);min-height:100vh;display:flex;flex-direction:column;-webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+main{flex:1}
+.wrap{max-width:1180px;margin:0 auto;padding:40px 20px}
+h1{font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;font-weight:700}
+h2{font-size:1.5rem;margin-bottom:18px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+h2 a{font-size:.9rem;color:var(--c)}
+header{position:sticky;top:0;z-index:20;background:rgba(0,0,0,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.logo{font-weight:700;font-size:1.45rem;letter-spacing:.02em}
+.logo b{color:var(--c);text-shadow:var(--g)}
+.logo i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-left:6px;box-shadow:var(--g);animation:bl 1.6s infinite}
+@keyframes bl{50%{opacity:.2}}
+nav{display:flex;align-items:center;gap:6px;flex:1}
+nav a.l{padding:8px 12px;border-radius:8px;color:var(--m)}
+nav a.l:hover,nav a.l.on{color:var(--c);background:rgba(0,240,255,.07)}
+.sf{margin-left:auto}
+input,select,textarea{background:#020405;color:var(--t);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font:inherit;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--c);box-shadow:0 0 0 3px rgba(0,240,255,.15);outline:0}
+.sf input{width:210px;padding:8px 14px}
+#mb{display:none;background:0;border:1px solid var(--line);color:var(--c);border-radius:10px;padding:8px 12px;font:inherit;margin-left:auto}
+.btn{display:inline-block;border:1px solid var(--c);color:var(--c);background:rgba(0,240,255,.06);padding:12px 22px;border-radius:12px;font:600 1rem 'Chakra Petch',sans-serif;cursor:pointer;box-shadow:0 0 14px rgba(0,240,255,.25),inset 0 0 12px rgba(0,240,255,.08);transition:.2s;text-align:center}
+.btn:hover{background:var(--c);color:#001a1c;box-shadow:var(--g),0 0 40px rgba(0,240,255,.4)}
+.btn.sm{padding:8px 16px;font-size:.92rem}
+.btn.solid{background:var(--c);color:#001a1c}
+.btn.solid:hover{background:#7ffaff}
+.btn.red{border-color:#ff4d6d;color:#ff4d6d;box-shadow:none;background:0}
+.hero{position:relative;overflow:hidden;text-align:center;padding:90px 20px 70px;border-bottom:1px solid var(--line)}
+.ring{pointer-events:none;position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px;border:1px solid var(--c);border-radius:50%;opacity:0;animation:pg 6s infinite cubic-bezier(.2,.6,.3,1)}
+.ring:nth-child(2){animation-delay:2s}.ring:nth-child(3){animation-delay:4s}
+@keyframes pg{0%{transform:scale(.3);opacity:.7}100%{transform:scale(11);opacity:0}}
+.hero>*:not(.ring){position:relative}
+.hero h1{font-size:clamp(2.3rem,9vw,5.6rem);text-shadow:0 0 30px rgba(0,240,255,.5);letter-spacing:.01em}
+.hero h1 span{color:var(--c)}
+.hero p{color:var(--m);max-width:520px;margin:18px auto 30px;font-size:1.1rem}
+.ms{font-size:.9rem;color:var(--c);border:1px solid var(--line);display:inline-block;padding:3px 12px;border-radius:99px;margin-bottom:22px}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hs{max-width:520px;margin:34px auto 0}
+.ann{background:rgba(0,240,255,.08);border-bottom:1px solid var(--line);text-align:center;padding:9px 16px;font-size:.95rem;color:var(--c)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--p);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.card:hover{border-color:var(--c);box-shadow:0 0 28px rgba(0,240,255,.18);transform:translateY(-3px)}
+.im{position:relative;display:block;aspect-ratio:16/9;background:#031013}
+.im img,.ph{width:100%;height:100%;object-fit:cover;display:block}
+.ph{background:repeating-conic-gradient(#04181b 0 25%,#020a0c 0 50%) 0 0/28px 28px}
+.tag{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.75);border:1px solid var(--c);color:var(--c);font-size:.78rem;padding:2px 10px;border-radius:99px}
+.cb{padding:16px;display:flex;flex-direction:column;gap:9px;flex:1}
+.cb h3{font-size:1.1rem}
+.cb p{color:var(--m);font-size:.92rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:.8rem;color:var(--m)}
+.meta span{border:1px solid var(--line);padding:1px 9px;border-radius:6px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.fav{background:0;border:1px solid var(--line);color:var(--m);border-radius:10px;width:38px;height:38px;font-size:1.1rem;cursor:pointer}
+.fav.on{color:#ff4d6d;border-color:#ff4d6d;text-shadow:0 0 10px #ff4d6d}
+section.s{margin-bottom:56px}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:12px;margin:24px 0}
+.empty,.note{color:var(--m);padding:30px;border:1px dashed var(--line);border-radius:14px;text-align:center}
+.note b{color:var(--c)}
+.comm{border:1px solid var(--line);border-radius:20px;padding:44px 24px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(0,240,255,.14),transparent 70%)}
+.comm p{color:var(--m);margin:10px 0 22px}
+.det{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;margin-top:20px}
+.gal>img,.gal>.ph{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.th{display:flex;gap:10px;margin-top:10px;overflow-x:auto}
+.th img{width:90px;height:56px;object-fit:cover;border-radius:8px;border:1px solid var(--line);cursor:pointer}
+.dls{display:grid;gap:10px;margin:20px 0}
+.box{background:var(--p);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:22px}
+.box h3{margin-bottom:12px}
+form.f{display:grid;gap:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:.85rem;color:var(--m);display:grid;gap:5px}
+.li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.li small{color:var(--m)}
+.eim{display:flex;gap:8px;flex-wrap:wrap}.eim span{position:relative}.eim img{width:70px;height:44px;object-fit:cover;border-radius:6px}
+.eim button{position:absolute;right:-4px;top:-6px;background:#ff4d6d;border:0;color:#fff;border-radius:50%;width:20px;height:20px;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:30px 20px;text-align:center;color:var(--m);font-size:.9rem}
+footer div{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+footer a:hover{color:var(--c)}
+#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,30px);background:#001a1c;border:1px solid var(--c);color:var(--c);padding:11px 20px;border-radius:12px;opacity:0;pointer-events:none;transition:.3s;z-index:50;box-shadow:var(--g)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+.pg{animation:in .35s ease}@keyframes in{from{opacity:0}}
+.fl2{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-bottom:12px}
+.adds{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:10px}
+.stats div{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;color:var(--m);font-size:.85rem;background:var(--p)}
+.stats b{display:block;color:var(--c);font-size:1.6rem;text-shadow:var(--g)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}.chips a{border:1px solid var(--line);color:var(--c);padding:2px 12px;border-radius:99px;font-size:.85rem}.chips a:hover{border-color:var(--c);box-shadow:var(--g)}
+.modal{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.94);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(14px + env(safe-area-inset-top)) 12px calc(28px + env(safe-area-inset-bottom))}
+.mbox{max-width:760px;margin:0 auto;background:var(--p);border:1px solid var(--c);border-radius:18px;padding:24px;box-shadow:var(--g)}
+.mh{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}
+.x{background:0;border:1px solid var(--line);color:var(--c);border-radius:10px;width:42px;height:42px;font-size:1.4rem;cursor:pointer;flex:none}
+.x:hover{border-color:var(--c)}
+body.lock{overflow:hidden}
+@media(max-width:820px){
+#mb{display:block}
+nav{display:none;position:absolute;left:0;right:0;top:100%;background:#000;flex-direction:column;align-items:stretch;padding:14px 20px 20px;border-bottom:1px solid var(--line);gap:8px}
+nav.open{display:flex}
+.sf{margin:6px 0}.sf input{width:100%}input,select,textarea{font-size:16px}
+.filters,.det,.two,.fl2{grid-template-columns:1fr}
+.adds{grid-template-columns:1fr}.mbox{padding:16px}
+.hero{padding:64px 16px 50px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+<a class="logo" href="#/">Zero<b>Ping</b><i></i></a>
+<button id="mb" aria-label="Menu" aria-expanded="false">Menu</button>
+<nav id="nav">
+<a class="l" href="#/">Home</a><a class="l" href="#/mods">Mods</a><a class="l" href="#/packs">Texture Packs</a><a class="l" href="#/account" id="acc">Login</a><a class="l" href="#/admin" id="adm" hidden>Admin</a>
+<form class="sf" id="sf" role="search"><input type="search" name="q" placeholder="Search mods &amp; packs" aria-label="Search"></form>
+<a class="btn sm solid" href="https://discord.gg/rshVAYS7Uq" target="_blank" rel="noopener">Join Discord</a>
+</nav></div></header>
+<div id="annw"></div>
+<main id="app"></main>
+<footer><div><a href="#/mods">Mods</a><a href="#/packs">Texture Packs</a><a href="#/account">Account</a><a href="https://discord.gg/rshVAYS7Uq" target="_blank" rel="noopener">Join Discord</a></div>© ZeroPing. Not affiliated with Mojang or Microsoft.</footer>
+<div id="toast" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script>
+/* ===== SETUP: paste your Supabase values (Project Settings → API). The anon key is public by design; never paste a service_role key. ===== */
+const CFG={url:'https://ntolkksqekxxwhnlrhif.supabase.co',key:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im50b2xra3NxZWt4eHdobmxyaGlmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMwMDkzNzUsImV4cCI6MjEwODU4NTM3NX0.zn0xYyr4loj5QbLKwpr4HyMycBzaObL0wiU9MHCKwpY'};
+const D='https://discord.gg/rshVAYS7Uq',ADMIN='miguel.rawos@gmail.com';
+const $=(s,r=document)=>r.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),safe=u=>/^https?:\/\//i.test(u)?u:'#';
+let ok=!CFG.url.startsWith('YOUR'),sb=null,initErr='';
+if(ok){try{if(typeof supabase==='undefined')throw new Error('The Supabase library did not load. Check your connection or ad blocker.');sb=supabase.createClient(CFG.url.trim(),CFG.key.trim())}catch(err){ok=false;initErr=err.message}}
+const S={user:null,res:[],cats:[],ann:'',favs:new Set()};
+let E={id:null,images:[]},reg=false;
+const isAdmin=()=>!!S.user&&(S.user.email||'').toLowerCase()===ADMIN&&!!S.user.email_confirmed_at;
+const pub=()=>S.res.filter(r=>r.published),vs=r=>(r.mc_version||'').split(',').map(s=>s.trim()).filter(Boolean);
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2800)}
+async function pull(t,ord){let a=[],f=0;for(;;){let x=sb.from(t).select('*');for(const k of ord)x=x.order(k[0],{ascending:k[1]});const{data,error}=await x.range(f,f+999);if(error)return{data:a,error};a=a.concat(data||[]);if(!data||data.length<1000)return{data:a};f+=1000}}
+async function load(){
+ if(!ok)return;
+ try{
+ const[r,c,a]=await Promise.all([pull('resources',[['created_at',false],['id',true]]),pull('categories',[['name',true]]),sb.from('announcements').select('*').eq('id',1).maybeSingle()]);
+ if(r.error)toast('Could not load resources: '+r.error.message);else S.res=r.data;
+ if(!c.error)S.cats=c.data;S.ann=a.data?.text||'';
+ if(S.user){const f=await pull('favorites',[['resource_id',true]]);S.favs=new Set(f.data.map(x=>x.resource_id))}else S.favs=new Set();
+ }catch(err){toast('Could not reach the database')}
+}
+const cov=r=>r.cover||(r.images||[])[0]||'';
+const img=r=>cov(r)?`<img src="${esc(safe(cov(r)))}" alt="${esc(r.title)}" loading="lazy">`:'<div class="ph"></div>';
+const fav=id=>`<button class="fav ${S.favs.has(id)?'on':''}" data-fav="${id}" aria-label="Favorite">♥</button>`;
+const card=r=>{const d=r.downloads?.[0];return `<article class="card"><a href="#/r/${r.id}" class="im">${img(r)}<span class="tag">${r.type==='mod'?'Mod':'Texture pack'}</span></a><div class="cb"><h3><a href="#/r/${r.id}">${esc(r.title)}</a></h3><p>${esc(r.description)}</p><div class="meta">${vs(r).slice(0,2).map(v=>`<span>${esc(v)}</span>`).join('')}${r.category?`<span>${esc(r.category)}</span>`:''}${r.author?`<span>by ${esc(r.author)}</span>`:''}</div><div class="row">${d?`<a class="btn sm" data-dl="${r.id}" href="${esc(safe(d.url))}" target="_blank" rel="noopener">Download</a>`:`<a class="btn sm" href="#/r/${r.id}">Details</a>`}${fav(r.id)}</div></div></article>`};
+const grid=l=>l.length?`<div class="grid">${l.map(card).join('')}</div>`:'<p class="empty">Nothing here yet. New releases appear as soon as they are published.</p>';
+const setup=()=>`<div class="wrap"><div class="note"><b>${initErr?'Could not connect.':'Setup needed.'}</b><br>${initErr?esc(initErr):'Connect your free Supabase project by adding its URL and anon key at the top of the script in index.html. Steps are in README-SETUP.md.'}</div></div>`;
+function home(){
+ const p=pub();const feat=p.filter(r=>r.featured).slice(0,6),nw=p.slice(0,8),pop=[...p].sort((a,b)=>b.download_count-a.download_count).slice(0,6);
+ $('#app').innerHTML=`<div class="hero"><i class="ring"></i><i class="ring"></i><i class="ring"></i><span class="ms">0 ms · free downloads · no account needed</span><h1>UPGRADE YOUR<br><span>MINECRAFT</span></h1><p>Hand-picked mods and texture packs for every version, ready to download.</p><div class="btns"><a class="btn solid" href="#/mods">Explore Mods</a><a class="btn" href="#/packs">Texture Packs</a><a class="btn" href="${D}" target="_blank" rel="noopener">Join Discord</a></div><form class="hs" id="hsf"><input type="search" name="q" placeholder="Search mods &amp; texture packs" aria-label="Search"></form></div>
+ <div class="wrap">${ok?`${feat.length?`<section class="s"><h2>Featured</h2>${grid(feat)}</section>`:''}<section class="s"><h2>Newest additions <a href="#/mods">All mods</a></h2>${grid(nw)}</section><section class="s"><h2>Popular downloads</h2>${grid(pop)}</section>`:setup()}
+ <section class="comm"><h2 style="justify-content:center">Join the ZeroPing community</h2><p>Request resources, share screenshots and get updates first.</p><a class="btn solid" href="${D}" target="_blank" rel="noopener">Join Discord</a></section></div>`;
+ $('#hsf').onsubmit=e=>{e.preventDefault();goSearch(e.target.q.value)};
+}
+function lib(type,q,title){
+ const list=pub().filter(r=>!type||r.type===type);
+ const V=[...new Set(list.flatMap(vs))].sort().reverse(),C=[...new Set(list.map(r=>r.category).filter(Boolean))].sort();
+ $('#app').innerHTML=`<section class="wrap pg"><h1>${title}</h1>${ok?`<p id="cnt" style="color:var(--m);margin-top:6px"></p><div class="filters"><input id="fq" type="search" placeholder="Search name, author, tag or category" aria-label="Search" value="${esc(q)}"><select id="fv" aria-label="Version"><option value="">All versions</option>${V.map(v=>`<option>${esc(v)}</option>`).join('')}</select><select id="fc" aria-label="Category"><option value="">All categories</option>${C.map(v=>`<option>${esc(v)}</option>`).join('')}</select><select id="fs" aria-label="Sort"><option value="n">Newest</option><option value="p">Most downloaded</option></select></div><div id="g"></div><div id="mo" style="text-align:center;margin-top:26px"></div>`:setup()}</section>`;
+ if(!ok)return;
+ let n=24,last='';
+ const draw=()=>{const q=$('#fq').value.toLowerCase().trim(),v=$('#fv').value,c=$('#fc').value,k=[q,v,c,$('#fs').value,n].join('|');if(k===last)return;last=k;
+  const o=list.filter(r=>(!q||(r.title+' '+r.description+' '+r.category+' '+(r.author||'')+' '+(r.tags||[]).join(' ')).toLowerCase().includes(q))&&(!v||vs(r).includes(v))&&(!c||r.category===c));
+  if($('#fs').value==='p')o.sort((a,b)=>b.download_count-a.download_count);
+  $('#cnt').textContent=o.length+(o.length===1?' result':' results');
+  $('#g').innerHTML=grid(o.slice(0,n));
+  $('#mo').innerHTML=o.length>n?`<button class="btn" id="mob">Show more (${o.length-n})</button>`:'';
+  if($('#mob'))$('#mob').onclick=()=>{n+=24;draw()}};
+ ['fq','fv','fc','fs'].forEach(i=>['input','change'].forEach(t=>$('#'+i).addEventListener(t,()=>{n=24;draw()})));draw();
+}
+function detail(id){
+ const r=S.res.find(x=>x.id===id&&(x.published||isAdmin()));
+ if(!r){$('#app').innerHTML='<div class="wrap"><p class="empty">This resource does not exist or is not published. <a class="btn sm" href="#/">Back home</a></p></div>';return}
+ const im=[...new Set([r.cover,...(r.images||[])].filter(Boolean))];
+ $('#app').innerHTML=`<div class="wrap pg"><a href="#/${r.type==='mod'?'mods':'packs'}" style="color:var(--c)">‹ Back to ${r.type==='mod'?'mods':'texture packs'}</a><div class="det"><div class="gal">${im[0]?`<img id="mainimg" src="${esc(safe(im[0]))}" alt="${esc(r.title)}">`:'<div class="ph"></div>'}${im.length>1?`<div class="th">${im.map(u=>`<img src="${esc(safe(u))}" alt="Screenshot" data-sh="${esc(safe(u))}">`).join('')}</div>`:''}</div>
+ <div><span class="tag" style="position:static">${r.type==='mod'?'Mod':'Texture pack'}</span><h1 style="margin:12px 0">${esc(r.title)}</h1><div class="meta">${vs(r).map(v=>`<span>${esc(v)}</span>`).join('')}${r.category?`<span>${esc(r.category)}</span>`:''}<span>${r.download_count||0} downloads</span>${r.published?'':'<span>Draft</span>'}</div>
+ ${r.author?`<p style="margin-top:14px;color:var(--m)">By ${esc(r.author)}</p>`:''}<p style="margin:14px 0;color:var(--m);white-space:pre-line">${esc(r.description)}</p>${(r.tags||[]).length?`<div class="chips">${r.tags.map(t=>`<a href="#/search?q=${encodeURIComponent(t)}">${esc(t)}</a>`).join('')}</div>`:''}<div class="dls">${(r.downloads||[]).map(d=>`<a class="btn solid" data-dl="${r.id}" href="${esc(safe(d.url))}" target="_blank" rel="noopener">Download ${esc(d.label||'')}</a>`).join('')||'<p class="empty">No download links yet.</p>'}</div>
+ <div class="row" style="justify-content:flex-start;flex-wrap:wrap">${fav(r.id)}${isAdmin()?`<button class="btn sm" data-ed="${r.id}">Edit</button>`:''}<a class="btn" href="${D}" target="_blank" rel="noopener">Join Discord</a></div></div></div></div>`;
+}
+function account(){
+ if(!ok){$('#app').innerHTML=setup();return}
+ if(!S.user){
+  $('#app').innerHTML=`<div class="wrap pg" style="max-width:460px"><h1>${reg?'Create account':'Login'}</h1><p style="color:var(--m);margin:8px 0 22px">Optional. Browsing and downloading always work without an account. An account lets you save favorites.</p><form class="f" id="af">${reg?'<label>Username<input name="u" required maxlength="24"></label>':''}<label>Email<input name="e" type="email" required autocomplete="email"></label><label>Password<input name="p" type="password" required minlength="8" autocomplete="${reg?'new':'current'}-password"></label><button class="btn solid">${reg?'Create account':'Login'}</button></form><p style="margin-top:18px"><a href="#" id="tg" style="color:var(--c)">${reg?'I already have an account':'Create a free account'}</a></p></div>`;
+  $('#tg').onclick=e=>{e.preventDefault();reg=!reg;account()};
+  $('#af').onsubmit=async e=>{e.preventDefault();const f=e.target,b=f.querySelector('button');b.disabled=true;
+   const{error}=reg?await sb.auth.signUp({email:f.e.value,password:f.p.value,options:{data:{username:f.u.value}}}):await sb.auth.signInWithPassword({email:f.e.value,password:f.p.value});
+   b.disabled=false;if(error)return toast(error.message);toast(reg?'Check your email to confirm your account':'Welcome back');if(!reg)location.hash='#/account'};
+  return;
+ }
+ const fv=S.res.filter(r=>S.favs.has(r.id)&&r.published);
+ $('#app').innerHTML=`<div class="wrap pg"><h1>${esc(S.user.user_metadata?.username||'Profile')}</h1><p style="color:var(--m)">${esc(S.user.email)}</p><div class="btns" style="justify-content:flex-start;margin:18px 0 30px">${isAdmin()?'<a class="btn solid" href="#/admin">Admin dashboard</a>':''}<button class="btn red" id="lo">Log out</button></div><form class="f box" id="pf"><h3>Username</h3><div class="two"><input name="u" value="${esc(S.user.user_metadata?.username||'')}" maxlength="24" aria-label="Username"><button class="btn">Save</button></div></form><h2>Your favorites</h2>${fv.length?grid(fv):'<p class="empty">No favorites yet. Tap ♥ on any mod or texture pack.</p>'}</div>`;
+ $('#lo').onclick=()=>sb.auth.signOut();
+ $('#pf').onsubmit=async e=>{e.preventDefault();const{error}=await sb.auth.updateUser({data:{username:e.target.u.value}});toast(error?error.message:'Saved')};
+}
+const uid=()=>crypto.randomUUID?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);
+const parseDL=t=>t.split('\n').map(s=>s.trim()).filter(Boolean).map(l=>{const i=l.lastIndexOf('|');return i<0?{label:'',url:l}:{label:l.slice(0,i).trim(),url:l.slice(i+1).trim()}}).filter(d=>/^https?:\/\//i.test(d.url));
+function admin(){
+ if(!isAdmin()){$('#app').innerHTML='<div class="wrap"><p class="empty">Admin access only. Log in with the administrator account.<br><br><a class="btn sm" href="#/account">Login</a></p></div>';return}
+ const m=S.res.filter(r=>r.type==='mod').length,pb=S.res.filter(r=>r.published).length;
+ $('#app').innerHTML=`<div class="wrap pg"><h1>Admin dashboard</h1>
+ <div class="adds"><button class="btn solid" data-new="mod">Add New Mod</button><button class="btn solid" data-new="pack">Add New Texture Pack</button></div>
+ <div class="stats"><div><b>${S.res.length}</b>Total</div><div><b>${pb}</b>Published</div><div><b>${S.res.length-pb}</b>Drafts</div><div><b>${m}</b>Mods</div><div><b>${S.res.length-m}</b>Texture packs</div></div>
+ <div class="box" style="margin-top:24px"><h3>Your resources</h3><div class="fl2"><input id="aq" type="search" placeholder="Search by name, author or category" aria-label="Search resources"><select id="at" aria-label="Filter"><option value="">All</option><option value="mod">Mods</option><option value="pack">Texture packs</option><option value="live">Published</option><option value="draft">Drafts</option></select></div><div id="al"></div><div id="am" style="text-align:center;margin-top:14px"></div></div>
+ <div class="box"><h3>Announcement</h3><form class="f" id="af"><textarea name="t" rows="2" placeholder="Shown at the top of every page. Leave empty to hide.">${esc(S.ann)}</textarea><button class="btn">Save announcement</button></form></div>
+ <div class="box"><h3>Categories</h3><p style="color:var(--m);font-size:.9rem;margin-bottom:12px">New categories are also created automatically when you save a resource.</p><form class="two" id="cf"><input name="n" placeholder="New category" required aria-label="Category name"><button class="btn">Add</button></form>${S.cats.map(c=>`<div class="li"><span>${esc(c.name)}</span><button class="btn sm red" data-dc="${c.id}">Delete</button></div>`).join('')}</div></div>`;
+ let n=30,last='';
+ const drawA=()=>{const q=$('#aq').value.toLowerCase(),t=$('#at').value,k=[q,t,n,S.res.length].join('|');if(k===last)return;last=k;
+  const l=S.res.filter(r=>(!q||(r.title+' '+(r.author||'')+' '+(r.category||'')).toLowerCase().includes(q))&&(!t||(t==='draft'?!r.published:t==='live'?r.published:r.type===t)));
+  $('#al').innerHTML=l.slice(0,n).map(r=>`<div class="li"><div><a href="#/r/${r.id}">${esc(r.title)}</a><br><small>${r.type==='mod'?'Mod':'Texture pack'} · ${r.published?'Published':'Draft'} · ${esc(r.mc_version||'no version')} · ${r.download_count||0} downloads</small></div><div class="row"><button class="btn sm" data-pb="${r.id}">${r.published?'Unpublish':'Publish'}</button><button class="btn sm" data-ed="${r.id}">Edit</button><button class="btn sm red" data-rm="${r.id}">Delete</button></div></div>`).join('')||'<p class="empty">No resources here yet. Use Add New Mod or Add New Texture Pack above.</p>';
+  $('#am').innerHTML=l.length>n?`<button class="btn sm" id="amb">Show more (${l.length-n})</button>`:'';
+  if($('#amb'))$('#amb').onclick=()=>{n+=30;drawA()}};
+ ['aq','at'].forEach(i=>['input','change'].forEach(t=>$('#'+i).addEventListener(t,()=>{n=30;drawA()})));drawA();
+ $('#af').onsubmit=async ev=>{ev.preventDefault();const{error}=await sb.from('announcements').upsert({id:1,text:ev.target.t.value});toast(error?error.message:'Announcement saved');await load();ann()};
+ $('#cf').onsubmit=async ev=>{ev.preventDefault();const{error}=await sb.from('categories').insert({name:ev.target.n.value.trim()});if(error)return toast(error.message);await load();admin()};
+}
+function closeForm(){const m=$('#md');if(m)m.remove();document.body.classList.remove('lock')}
+function thumbs(){
+ $('#cv').innerHTML=E.cover?`<div class="eim"><span><img src="${esc(safe(E.cover))}" alt="Cover"><button type="button" data-rc aria-label="Remove cover">×</button></span></div>`:'';
+ $('#th').innerHTML=E.images.map((u,i)=>`<span><img src="${esc(safe(u))}" alt="Screenshot ${i+1}"><button type="button" data-ri="${i}" aria-label="Remove screenshot">×</button></span>`).join('');
+}
+function openForm(type,id){
+ if(!isAdmin())return;closeForm();
+ const r=id?S.res.find(x=>x.id===id):null,e=r||{};
+ E={id:r?r.id:null,type:r?r.type:type,cover:r?.cover||'',images:[...(r?.images||[])]};
+ const cats=[...new Set([...S.cats.map(c=>c.name),...S.res.map(x=>x.category).filter(Boolean)])].sort();
+ const md=document.createElement('div');md.className='modal';md.id='md';md.setAttribute('role','dialog');md.setAttribute('aria-modal','true');
+ md.innerHTML=`<div class="mbox"><div class="mh"><h2 style="margin:0">${r?'Edit':'Add New'} ${E.type==='mod'?'Mod':'Texture Pack'}</h2><button class="x" type="button" data-x aria-label="Close">×</button></div>
+ <form class="f" id="rf" novalidate>
+ <div class="two"><label>Type<select name="ty"><option value="mod" ${E.type==='mod'?'selected':''}>Mod</option><option value="pack" ${E.type==='pack'?'selected':''}>Texture pack</option></select></label><label>Name<input name="title" required maxlength="120" value="${esc(e.title)}"></label></div>
+ <div class="two"><label>Minecraft version(s), comma separated<input name="v" placeholder="1.21, 1.20.4" value="${esc(e.mc_version)}"></label><label>Category<input name="cat" list="cl" placeholder="e.g. Utility, PvP" value="${esc(e.category)}"><datalist id="cl">${cats.map(c=>`<option value="${esc(c)}">`).join('')}</datalist></label></div>
+ <div class="two"><label>Author<input name="au" maxlength="80" value="${esc(e.author)}"></label><label>Tags, comma separated<input name="tg" placeholder="pvp, 16x, fps" value="${esc((e.tags||[]).join(', '))}"></label></div>
+ <label>Description<textarea name="d" rows="5">${esc(e.description)}</textarea></label>
+ <label>Download links, one per line: Label | https://link (or just https://link)<textarea name="dl" rows="3">${esc((e.downloads||[]).map(d=>d.label?d.label+' | '+d.url:d.url).join('\n'))}</textarea></label>
+ <label>Cover image: upload<input type="file" name="cf" accept="image/*"></label><label>or cover image URL<input name="cu" type="url" placeholder="https://"></label><div id="cv"></div>
+ <label>Screenshots: upload as many as you like<input type="file" name="files" accept="image/*" multiple></label><label>or screenshot URLs, one per line<textarea name="iu" rows="2"></textarea></label><div id="th" class="eim"></div>
+ <label style="display:flex;gap:10px;align-items:center"><input type="checkbox" name="feat" style="width:auto" ${e.featured?'checked':''}> Featured on homepage</label>
+ <div class="two"><button type="button" class="btn solid" data-save="1">${r&&r.published?'Save (stays published)':'Publish'}</button><button type="button" class="btn" data-save="0">Save as draft</button></div>
+ <p id="st" style="color:var(--m);font-size:.9rem;min-height:1.3em"></p></form></div>`;
+ document.body.appendChild(md);document.body.classList.add('lock');
+ md.addEventListener('click',ev=>{if(ev.target===md)closeForm()});
+ $('#rf').onsubmit=ev=>ev.preventDefault();thumbs();
+}
+async function saveRes(pubd){
+ const f=$('#rf'),st=$('#st'),bs=f.querySelectorAll('[data-save]'),g=n=>f.elements[n];
+ if(!g('title').value.trim()){toast('Enter a name first');g('title').focus();return}
+ const dl=parseDL(g('dl').value);
+ if(pubd&&!dl.length){toast('Add at least one download link (https://…) before publishing');g('dl').focus();return}
+ bs.forEach(b=>b.disabled=true);
+ try{
+  const up=async(file,dir)=>{
+   if(!file.type.startsWith('image/'))throw new Error(file.name+' is not an image');
+   if(file.size>10*1048576)throw new Error(file.name+' is larger than 10 MB');
+   const x=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'')||'jpg',path=`${dir}/${uid()}.${x}`;
+   const{error}=await sb.storage.from('media').upload(path,file,{contentType:file.type,cacheControl:'31536000'});
+   if(error)throw new Error('Upload failed: '+error.message+' (did you run setup.sql?)');
+   return sb.storage.from('media').getPublicUrl(path).data.publicUrl};
+  let cover=E.cover;const cf=g('cf').files[0];
+  if(cf){st.textContent='Uploading cover…';cover=await up(cf,'covers')}else{const cu=g('cu').value.trim();if(/^https?:\/\//i.test(cu))cover=cu}
+  const im=[...E.images],fl=[...g('files').files];
+  for(let i=0;i<fl.length;i++){st.textContent=`Uploading screenshot ${i+1} of ${fl.length}…`;im.push(await up(fl[i],'screenshots'))}
+  im.push(...g('iu').value.split('\n').map(s=>s.trim()).filter(u=>/^https?:\/\//i.test(u)));
+  const tags=[...new Set(g('tg').value.split(',').map(s=>s.trim()).filter(Boolean))].slice(0,30);
+  const row={type:g('ty').value,title:g('title').value.trim(),description:g('d').value,mc_version:g('v').value.trim(),category:g('cat').value.trim(),author:g('au').value.trim(),tags,cover,images:im,downloads:dl,featured:g('feat').checked,published:pubd};
+  st.textContent='Saving…';
+  const q=E.id?sb.from('resources').update(row).eq('id',E.id):sb.from('resources').insert(row);
+  const{data,error}=await q.select('id').single();
+  if(error)throw new Error(error.code==='PGRST116'||/row-level|policy/i.test(error.message)?'Not saved: only the administrator account may change resources.':error.message);
+  if(row.category&&!S.cats.some(c=>c.name.toLowerCase()===row.category.toLowerCase()))await sb.from('categories').insert({name:row.category});
+  closeForm();toast(pubd?'Published':'Saved as draft');await load();route();
+ }catch(err){st.textContent=err.message||'Save failed';toast(err.message||'Save failed');bs.forEach(b=>b.disabled=false)}
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeForm()});
+document.addEventListener('click',async ev=>{
+ const t=ev.target.closest('[data-fav],[data-dl],[data-sh],[data-ri],[data-rc],[data-dc],[data-pb],[data-ed],[data-rm],[data-new],[data-x],[data-save]');if(!t)return;const d=t.dataset;
+ if(d.fav){ev.preventDefault();if(!S.user){toast('Log in to save favorites');location.hash='#/account';return}
+  const on=S.favs.has(d.fav);const{error}=on?await sb.from('favorites').delete().eq('resource_id',d.fav):await sb.from('favorites').insert({resource_id:d.fav,user_id:S.user.id});
+  if(error)return toast(error.message);on?S.favs.delete(d.fav):S.favs.add(d.fav);document.querySelectorAll(`[data-fav="${d.fav}"]`).forEach(b=>b.classList.toggle('on',!on));if(location.hash==='#/account')account()}
+ else if(d.dl){if(sb)sb.rpc('bump_download',{rid:d.dl}).then(()=>{},()=>{})}
+ else if(d.sh){$('#mainimg').src=d.sh}
+ else if('new' in d){openForm(d.new)}
+ else if('x' in d){closeForm()}
+ else if('save' in d){saveRes(d.save==='1')}
+ else if('rc' in d){E.cover='';thumbs()}
+ else if(d.ri){E.images.splice(+d.ri,1);thumbs()}
+ else if(d.dc){if(confirm('Delete this category?')){await sb.from('categories').delete().eq('id',d.dc);await load();admin()}}
+ else if(d.pb){const r=S.res.find(x=>x.id===d.pb);if(!r.published&&!(r.downloads||[]).length)return toast('Add a download link first (Edit), then publish');
+  const{data,error}=await sb.from('resources').update({published:!r.published}).eq('id',d.pb).select('id');
+  if(error||!data||!data.length)return toast(error?error.message:'Not changed: administrator only');toast(r.published?'Unpublished':'Published');await load();route()}
+ else if(d.ed){openForm(null,d.ed)}
+ else if(d.rm){const r=S.res.find(x=>x.id===d.rm);if(!confirm(`Delete "${r.title}" permanently?`))return;
+  const{data,error}=await sb.from('resources').delete().eq('id',d.rm).select('id');
+  if(error||!data||!data.length)return toast(error?error.message:'Not deleted: administrator only');
+  const ps=[r.cover,...(r.images||[])].map(u=>(u||'').split('/storage/v1/object/public/media/')[1]).filter(Boolean).map(decodeURIComponent);
+  if(ps.length)sb.storage.from('media').remove(ps).then(()=>{},()=>{});
+  toast('Deleted');await load();route()}
+});
+const closeMenu=()=>{$('#nav').classList.remove('open');$('#mb').setAttribute('aria-expanded','false')};
+$('#mb').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#mb').setAttribute('aria-expanded',String(o))};
+$('#nav').addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
+function goSearch(q){const h='#/search?q='+encodeURIComponent(q);if(location.hash===h)route();else location.hash=h}
+$('#sf').onsubmit=e=>{e.preventDefault();goSearch(e.target.q.value);e.target.q.value='';closeMenu()};
+function ann(){$('#annw').innerHTML=S.ann?`<div class="ann">${esc(S.ann)}</div>`:''}
+function route(){
+ const[p,qs]=(location.hash.slice(1)||'/').split('?'),q=new URLSearchParams(qs||'').get('q')||'',s=p.split('/').filter(Boolean);
+ closeMenu();scrollTo(0,0);
+ document.querySelectorAll('nav a.l').forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#/'+(s[0]||'')));
+ $('#acc').textContent=S.user?'Profile':'Login';$('#adm').hidden=!isAdmin();
+ if(!s[0])home();else if(s[0]==='mods')lib('mod',q,'Mods');else if(s[0]==='packs')lib('pack',q,'Texture packs');else if(s[0]==='search')lib(null,q,'Search results');
+ else if(s[0]==='r')detail(s[1]);else if(s[0]==='account')account();else if(s[0]==='admin')admin();else home();
+}
+addEventListener('hashchange',route);
+(async()=>{
+ try{
+  if(ok){const{data}=await sb.auth.getSession();S.user=data.session?.user||null;
+   sb.auth.onAuthStateChange((_e,s)=>{const was=S.user?.id;S.user=s?.user||null;if(was!==S.user?.id)setTimeout(async()=>{await load();ann();route()},0)})}
+  await load();
+ }catch(err){toast('Could not start the login service')}
+ ann();route();
+})();
+</script>
+</body>
+</html>
